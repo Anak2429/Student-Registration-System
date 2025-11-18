@@ -1,8 +1,8 @@
 
 // feched all HTML Elements by document.getElementByID() method //
-let Name = document.getElementById("name");
+let Name = document.getElementById("student_name");
 let submit = document.getElementById("submit");
-let reset = document.getElementById("reset");
+let reset = document.getElementById("resetBtn");
 let student_id = document.getElementById("student_id");
 let student_email =document.getElementById("student_email");
 let contact = document.getElementById("Contact_NO");
@@ -10,10 +10,10 @@ let StudentForm = document.getElementById("studentForm");
 const tableBody = document.getElementById("tableBody");
 
 //Adding the EventListener ont he Submit Button and Calling th addDetails() function //
-
 submit.addEventListener("click",addDetails);
 Name.focus();
 
+console.log(StudentForm); 
 // addDetails()  for Adding the Details to the Registerd Student List //
 function addDetails(event) {
     event.preventDefault();
@@ -72,6 +72,7 @@ function addDetails(event) {
     
 //appended the table row to the table 
     tableBody.appendChild(addRow);
+    console.log("befor reset",StudentForm);
     StudentForm.reset();
     Name.focus();
 
