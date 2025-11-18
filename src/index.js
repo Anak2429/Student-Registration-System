@@ -14,17 +14,23 @@ function addDetails() {
     console.log("SUBMITTED");
 
     const addRow = document.createElement("tr");
-    const name_th = document.createElement("th");
-    const id_th = document.createElement("th");
-    const email_th = document.createElement("th");
-    const contact_th = document.createElement("th");
+    const name_th = document.createElement("td");
+    const id_th = document.createElement("td");
+    const email_th = document.createElement("td");
+    const contact_th = document.createElement("td");
+    const remove = document.createElement("td");
+    const deleteBTN =document.createComment("button");
+    deleteBTN.textContent = "Delete";
+    deleteBTN.className = "px-3 py-1 bg-red-500 text-white rounded-md";
+    remove.appendChild(deleteBTN);
 
     name_th.innerHTML = Name.value;
     id_th.innerHTML = student_id.value;
     email_th.innerHTML = student_email.value;
     contact_th.innerHTML = contact.value;
+    
 
-    addRow.append(name_th, id_th, email_th, contact_th);
+    addRow.append(name_th, id_th, email_th, contact_th,remove);
 
     tableBody.appendChild(addRow);
 
