@@ -46,6 +46,14 @@ function addDetails(event) {
     const email_th = document.createElement("td");
     const contact_th = document.createElement("td");
     const remove = document.createElement("td");
+
+//adding alternate colors to the rows
+    if(tableBody.children.length % 2 === 0){
+        addRow.classList.add("bg-gray-100");
+    }
+    else{
+        addRow.classList.add("bg-gray-300");
+    }
 //Added Delete button for the Delete operation on row ///
     const deleteBTN =document.createElement("button");
     deleteBTN.textContent = "Delete";
