@@ -47,6 +47,24 @@ function addDetails(event) {
     const contact_th = document.createElement("td");
     const remove = document.createElement("td");
 
+// Added Edit Button 
+    const editBTN = document.createElement("button");
+    editBTN.textContent = "Edit";
+    editBTN.className = "px-3 py-1 bg-blue-500 text-white rounded-md mr-2";
+    
+    
+    editBTN.addEventListener("click", () => {
+// put row data back into inputs
+        Name.value = name_th.textContent;
+        student_id.value = id_th.textContent;
+        student_email.value = email_th.textContent;
+        contact.value = contact_th.textContent;
+        submit.textContent = "Update";
+        addRow.remove();
+        Name.focus();
+    });
+
+
 //adding alternate colors to the rows
     if(tableBody.children.length % 2 === 0){
         addRow.classList.add("bg-gray-100");
@@ -55,10 +73,9 @@ function addDetails(event) {
         addRow.classList.add("bg-gray-300");
     }
 //Added Delete button for the Delete operation on row ///
-    const deleteBTN =document.createElement("button");
+    const deleteBTN = document.createElement("button");
     deleteBTN.textContent = "Delete";
     deleteBTN.className = "px-3 py-1 bg-red-500 text-white rounded-md";
-
 // Added EventListener to teh Delete button For deleting the row in the display section //
     deleteBTN.addEventListener("click", ()=>{
         addRow.remove();
@@ -73,7 +90,7 @@ function addDetails(event) {
     
 
 // appended the delete button to the table row // 
-    remove.appendChild(deleteBTN);
+    remove.append(deleteBTN , editBTN);
     
 //appended the table data to th row 
     addRow.append(name_th, id_th, email_th, contact_th,remove);
@@ -85,3 +102,5 @@ function addDetails(event) {
     Name.focus();
 
 }
+
+
